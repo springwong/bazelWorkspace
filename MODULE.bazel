@@ -1,0 +1,27 @@
+###############################################################################
+# Bazel now uses Bzlmod by default to manage external dependencies.
+# Please consider migrating your external dependencies from WORKSPACE to MODULE.bazel.
+#
+# For more details, please check https://github.com/bazelbuild/bazel/issues/18958
+###############################################################################
+python
+
+# WORKSPACE
+
+# Update the version "0.0.0" to the release found here:
+# https://github.com/bazelbuild/rules_python/releases.
+bazel_dep(name = "rules_python", version = "1.2.0")
+
+python = use_extension("@rules_python//python/extensions:python.bzl", "python")
+python.toolchain(
+    python_version = "3.13",
+)
+
+pip = use_extension("@rules_python//python/extensions:pip.bzl", "pip")
+pip.parse(
+    hub_name = "pypi",
+    python_version = "3.13",
+    requirements_lock = "//:requirements_lock.txt",
+)
+
+use_repo(pip, "pypi")
