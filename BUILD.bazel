@@ -1,0 +1,23 @@
+load("@pip_deps//:requirements.bzl", "requirement")
+
+filegroup(
+    name = "requirements",
+    srcs = [
+        "requirements.txt",
+        "requirements_lock.txt",
+    ],
+    visibility = ["//visibility:public"],
+)
+
+py_binary(
+    name = "manage",
+    srcs = ["django_app/manage.py"],
+    main = "django_app/manage.py",
+    deps = [
+        "//django_app",
+        requirement("Django"),
+        requirement("psycopg2-binary"),
+        # requirement("django-environ"),
+    ],
+    visibility = ["//visibility:public"],
+)
