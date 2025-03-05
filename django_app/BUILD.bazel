@@ -1,0 +1,21 @@
+# django_app/BUILD.bazel
+load("@pip_deps//:requirements.bzl", "requirement")
+
+py_library(
+    name = "django_app",
+    srcs = glob(["django_app/**/*.py"]) + glob(["app/**/*.py"]),
+    imports = ["."],
+    deps = [
+        requirement("Django"),
+        requirement("psycopg2-binary"),
+        requirement("django-environ"),
+    ],
+    visibility = ["//visibility:public"],
+)
+
+py_binary(
+    name = "manage",
+    srcs = ["manage.py"],
+    main = "manage.py",
+    deps = [":django_app"],
+)

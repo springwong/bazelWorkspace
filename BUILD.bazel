@@ -17,7 +17,7 @@ py_binary(
         "//django_app",
         requirement("Django"),
         requirement("psycopg2-binary"),
-        # requirement("django-environ"),
+        requirement("django-environ"),
     ],
     visibility = ["//visibility:public"],
 )
