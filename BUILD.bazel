@@ -1,4 +1,4 @@
-load("@pip_deps//:requirements.bzl", "requirement")
+load("@my_deps//:requirements.bzl", "requirement")
 
 filegroup(
     name = "requirements",

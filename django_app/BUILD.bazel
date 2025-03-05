@@ -1,5 +1,5 @@
 # django_app/BUILD.bazel
-load("@pip_deps//:requirements.bzl", "requirement")
+load("@my_deps//:requirements.bzl", "requirement")
 
 py_library(
     name = "django_app",
