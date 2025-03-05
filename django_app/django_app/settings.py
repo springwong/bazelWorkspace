@@ -87,7 +87,7 @@ DATABASES = {
         'NAME': env('DB_NAME', default='django_db'),
         'USER': env('DB_USER', default='postgres'),
         'PASSWORD': env('DB_PASSWORD', default='postgres'),
-        'HOST': env('DB_HOST', default='localhost'),
+        'HOST': env('DB_HOST', default='localhost'),  # Use 'db' if Django runs in Docker too
         'PORT': env('DB_PORT', default='5432'),
     }
 }
