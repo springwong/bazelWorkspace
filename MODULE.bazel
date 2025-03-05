@@ -4,9 +4,11 @@
 #
 # For more details, please check https://github.com/bazelbuild/bazel/issues/18958
 ###############################################################################
-python
-
-# WORKSPACE
+# MODULE.bazel
+module(
+    name = "bazel_project",
+    version = "0.1",
+)
 
 # Update the version "0.0.0" to the release found here:
 # https://github.com/bazelbuild/rules_python/releases.
