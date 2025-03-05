@@ -14,7 +14,6 @@ py_binary(
     srcs = ["django_app/manage.py"],
     main = "django_app/manage.py",
     deps = [
-        "//django_app",
         requirement("Django"),
         requirement("psycopg2-binary"),
         requirement("django-environ"),

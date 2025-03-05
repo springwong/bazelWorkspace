@@ -3,7 +3,7 @@ load("@my_deps//:requirements.bzl", "requirement")
 
 py_library(
     name = "django_app",
-    srcs = glob(["django_app/**/*.py"]) + glob(["app/**/*.py"]),
+    srcs = glob(["django_app/**/*.py"]),
     imports = ["."],
     deps = [
         requirement("Django"),
