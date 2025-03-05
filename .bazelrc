@@ -1,0 +1,6 @@
+# .bazelrc
+build --enable_bzlmod
+
+# Python configuration
+build --experimental_python_import_all_repositories
+build --noincompatible_avoid_conflict_dlls
