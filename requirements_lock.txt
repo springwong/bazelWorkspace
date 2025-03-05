@@ -1,0 +1,8 @@
+asgiref==3.8.1
+distlib==0.3.8
+Django==5.1.6
+filelock==3.13.1
+platformdirs==4.2.0
+psycopg2==2.9.10
+sqlparse==0.5.3
+virtualenv==20.25.1
